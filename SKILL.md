@@ -59,7 +59,7 @@ For each skill:
 ### Phase 5 — Extract Bloated AGENTS.md Blocks
 
 1. Scan every `AGENTS.md` for inline instruction blocks >30 lines.
-2. For each block, create a new skill in `.agents/skills/<name>/SKILL.md`.
+2. For each block, create a new skill inside the project at `.agents/skills/<name>/SKILL.md`. Never create external repos — skills are project-based.
 3. Replace the original block with a slim pointer + Quick Reference (see `puretec-app-skill` for pattern).
 4. Run `bun skills` to sync new skills to `.claude/skills/`.
 

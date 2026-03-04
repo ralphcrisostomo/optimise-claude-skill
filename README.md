@@ -12,19 +12,7 @@ AI skill that audits and optimises skill files to reduce context-window consumpt
 
 ## Usage
 
-### In a new project
-
-Copy or clone into your project's `.agents/skills/` directory:
-
-```bash
-# Clone directly
-git clone https://github.com/ralphcrisostomo/optimise-claude-skill .agents/skills/optimise-claude
-
-# Or copy from a local checkout
-cp -r /path/to/optimise-claude .agents/skills/optimise-claude
-```
-
-Then invoke the skill in Claude Code or any compatible AI agent to audit and optimise skill files.
+Invoke the skill in Claude Code or any compatible AI agent to audit and optimise skill files.
 
 ### Wire into AGENTS.md
 
@@ -38,7 +26,7 @@ Load the **`optimise-claude`** skill when auditing, trimming, or restructuring A
 
 ### Sync to .claude/skills/
 
-If your project uses a skills sync script:
+After creating or updating the skill, run:
 
 ```bash
 bun skills
