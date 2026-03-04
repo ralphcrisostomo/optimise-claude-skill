@@ -9,7 +9,15 @@ Use this skill when auditing AI skill files for size, structure, duplication, or
 
 ## Scope
 
-All operations are strictly limited to the current project root (`$PWD`). Never read, write, or modify files outside the project repository. All paths below are relative to the project root.
+All operations are strictly limited to **project-level** skill directories:
+- `.agents/skills/` (relative to project root)
+- `.claude/skills/` (relative to project root)
+
+**NEVER** touch user-level (home directory) skill locations:
+- `~/.agents/skills/`
+- `~/.claude/skills/`
+
+Never read, write, list, or modify any file outside the current project root (`$PWD`).
 
 ## When to Use
 
@@ -85,11 +93,11 @@ New skills created: N
 
 ## Quick Reference
 
-- All operations are scoped to the current project repo only.
+- Only operate on project-level `.agents/skills/` and `.claude/skills/` — never `~/.agents/skills/` or `~/.claude/skills/`.
 - Source of truth: project's `.agents/skills/` — never edit `.claude/skills/` directly.
 - Canonical section order: H1, scope, When to Use, Rules, Quick Reference, Validation.
 - Target: <=120 lines per skill.
-- Never read, write, or modify files outside the project root.
+- Never read, write, list, or modify files outside the project root.
 
 ## Validation
 
@@ -98,3 +106,4 @@ New skills created: N
 - No two skills share >5 identical lines.
 - No `AGENTS.md` within the project has inline instruction blocks >30 lines without a skill pointer.
 - No files outside the project root were modified.
+- No files under `~/.agents/skills/` or `~/.claude/skills/` were read or modified.
